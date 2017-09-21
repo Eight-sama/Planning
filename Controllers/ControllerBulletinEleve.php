@@ -1,3 +1,10 @@
 <?php
-/*include (dirname(__FILE__).'/../Classes/ClassUser.php');*/
-include (dirname(__FILE__).'/../Views/ViewBulletinEleve.php');
+	require "Models/ModelClassesInit.php";
+	require "Models/ModelInit.php";
+	require "Models/ModelConfigBddSession.php";
+	ob_start();
+	include (dirname(__FILE__).'/../Views/content/ViewBulletinEleve.php');
+	$content = ob_get_contents();
+	ob_end_clean();
+	include (dirname(__FILE__).'/../Views/template.php');
+?>

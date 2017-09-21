@@ -1,6 +1,5 @@
-header, main, footer {
-      padding-left: 300px;
-}
-.small-border{
-    border:1px solid black;
+body{
+	background-image: url("../img/wp.jpeg");
+	background-repeat-x: no-repeat;
+	background-repeat-y: no-repeat;
 }

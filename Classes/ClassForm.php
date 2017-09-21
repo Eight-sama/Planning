@@ -2,12 +2,12 @@
 
 class ClassForm{
     
-    public function input($name, $content){
+    public function input($type, $name, $content){
         
         $html = "<div class='row'>";
         $html .= "<div class='input-field col s12'>";
         $html .= "<label for='".$name."'>".$content."</label>";
-        $html .= "<input id='".$name."' type='".$name."' class='validate'>";
+        $html .= "<input id='".$name."' name='".$name."' type='".$type."'>";
         $html .= "</div>";
         $html .= "</div>";        
 
@@ -18,7 +18,9 @@ class ClassForm{
         
         $html = "<div class='row'>";
         $html .= "<div class='input-field col s12 center'>";
-        $html .= "<a class='".$class."'>".$content."</a>";
+        $html .= "<button class='".$class."' type='submit' name='submit' id='submit'>";
+        $html .= $content;
+        $html .= "</button>";
         $html .= "</div>";
         $html .= "</div>";
 
@@ -86,7 +88,7 @@ class ClassForm{
             return $bdd = new PDO('mysql:host=localhost;dbname=planning', 'root' , '');
         }
         catch(Exception $e){
-            die("Erreur de connexion à la BDD $e->getMessage()");
+            die("Erreur de connexion à la BDD ".$e->getMessage());
         }        
     }
 }
