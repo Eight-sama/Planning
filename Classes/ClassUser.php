@@ -20,7 +20,7 @@ class ClassUser{
             }
             else
             {
-                die(vardump("Mauvais identifiant"));
+                echo "Mauvais identifiant";
             }
         }
     }
