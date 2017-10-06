@@ -5,8 +5,7 @@
 	require "Models/ModelModifierUtilisateur.php";
 
 	ob_start();
-	include (dirname(__FILE__).'/../Views/content/ViewModifierUtilisateur.php');
+	include (dirname(__FILE__).'/../Views/content/ViewOnModifEtudiant.php');
 	$content = ob_get_contents();
 	ob_end_clean();
 	include (dirname(__FILE__).'/../Views/template.php');
-?>

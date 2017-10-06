@@ -4,10 +4,9 @@
             <div class="card-panel col s12">
                 <h5>Mon Profil</h5>
                 <form id="modifier_profil" name="submit_profil" action="index.php?page=MiseAJourProfil" method="post" class="col s12">
-                    <?= $form->input('text', 'email' , 'E-mail actuel : '.$userInit->getInf('email').'') ?>
-                    <?= $form->input('text', 'nom' , 'E-mail actuel : '.$userInit->getInf('nom').'') ?>
-                    <?= $form->input('text', 'prenom' , 'E-mail actuel : '.$userInit->getInf('prenom').'') ?>
-                    <?= $form->input('password', 'mdp' ,'Mot de passe') ?>
+                    <?= $form->inputwdefault('text', 'email' , 'E-mail actuel : '.$userInit->getInf('email').'',$userInit->getInf('email')) ?>
+                    <?= $form->inputwdefault('text', 'nom' , 'Nom d\'utilisateur actuel: '.$userInit->getInf('nom').'',$userInit->getInf('nom')) ?>
+                    <?= $form->inputwdefault('text', 'prenom' , 'Prénom d\'utilisateur actuel: '.$userInit->getInf('prenom').'',$userInit->getInf('prenom')) ?>
                     <?= $form->submit('waves-effect waves-light btn indigo hoverable','Mettre à jour le profil', 'submit_profil') ?>
                 </form>
                 

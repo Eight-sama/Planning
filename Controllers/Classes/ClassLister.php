@@ -8,6 +8,13 @@ class ClassLister{
 	    	echo '<option value="'.$action['id_u'].'">'.$action['nom'].' '.$action['prenom'].'</option>';
 		}
 	}
+	public function profLister(){
+		global $bdd;
+		$statement = $bdd->query("SELECT * FROM users WHERE lvl = 2");
+		while($action = $statement->fetch()){
+	    	echo '<option value="'.$action['id_u'].'">'.$action['nom'].' '.$action['prenom'].'</option>';
+		}
+	}
 	public function classeLister(){
 		global $bdd;
 		$statement2 = $bdd->query("SELECT * FROM classes");

@@ -1,13 +1,13 @@
 <?php
-	if(isset($_POST['submit_profil'])){
+	if(isset($_POST['submit_profil']) && isset($_GET['id_u'])){
 		$email = $_POST['email'];
 		$nom = $_POST['nom'];
 		$prenom = $_POST['prenom'];
-        $requete = $bdd->prepare("UPDATE users SET email = '".$email."' WHERE id_u = ".$_SESSION['id']);
+        $requete = $bdd->prepare("UPDATE users SET email = '".$email."' WHERE id_u = ".$_GET['id_u']);
         $requete->execute();
-        $requete = $bdd->prepare("UPDATE users SET nom = '".$nom."' WHERE id_u = ".$_SESSION['id']);
+        $requete = $bdd->prepare("UPDATE users SET nom = '".$nom."' WHERE id_u = ".$_GET['id_u']);
         $requete->execute();
-        $requete = $bdd->prepare("UPDATE users SET prenom = '".$prenom."' WHERE id_u = ".$_SESSION['id']);
+        $requete = $bdd->prepare("UPDATE users SET prenom = '".$prenom."' WHERE id_u = ".$_GET['id_u']);
         $requete->execute();
         echo "<meta http-equiv='refresh' content='2; URL=index.php' />";
         die("Informations mises à jour.");

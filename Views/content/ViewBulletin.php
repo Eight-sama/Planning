@@ -27,7 +27,6 @@
                                 <th>Note 4</th>
                                 <th>Note 5</th>
                                 <th>Appréciations</th>
-                                <th>Modifier</th>
                             </tr>
                         </thead>
 
@@ -40,7 +39,6 @@
                                 <td>19/20</td>
                                 <td>19/20</td>
                                 <td>Très bon élément</td>
-                                <td><button href=""><i class="fa fa-edit"></i></button></td>
                             </tr>
                             <tr>
                                 <td>Culture Générale</td>
@@ -50,7 +48,6 @@
                                 <td>19/20</td>
                                 <td>19/20</td>
                                 <td>Très bon élément</td>
-                                <td><button href=""><i class="fa fa-edit"></i></button></td>
                             </tr>
                             <tr>
                                 <td>Science et Vie de la Terre</td>
@@ -60,7 +57,6 @@
                                 <td>19/20</td>
                                 <td>19/20</td>
                                 <td>Très bon élément</td>
-                                <td><button href=""><i class="fa fa-edit"></i></button></td>
                             </tr>
                             <tr>
                                 <td>EPS</td>
@@ -70,7 +66,6 @@
                                 <td>19/20</td>
                                 <td>19/20</td>
                                 <td>Très bon élément</td>
-                                <td><button href=""><i class="fa fa-edit"></i></button></td>
                             </tr>
                             <tr>
                                 <td>Arts Plastiques</td>
@@ -80,7 +75,6 @@
                                 <td>19/20</td>
                                 <td>19/20</td>
                                 <td>Très bon élément</td>
-                                <td><button href=""><i class="fa fa-edit"></i></button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -96,7 +90,8 @@
             <h5 class="center">Appréciation globale</h5>
             <div class="input-field col s12">
                 <p>
-                    
+                    <?= $userInit->getAppreGlobale($_GET['id_u']); ?>
+                    &nbsp;&nbsp;&nbsp;<a href="index.php?page=ChangerAppreGlobale&id_u=<?= $_GET['id_u']; ?>"><i class="fa fa-edit"></i></a>
                 </p>
             </div>
         </div>

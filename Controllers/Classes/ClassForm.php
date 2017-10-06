@@ -14,6 +14,18 @@ class ClassForm{
         return $html;
     }
 
+    public function inputwdefault($type, $name, $content,$default){
+        
+        $html = "<div class='row'>";
+        $html .= "<div class='input-field col s12'>";
+        $html .= "<label for='".$name."'>".$content."</label>";
+        $html .= "<input value='".$default."' id='".$name."' name='".$name."' type='".$type."'>";
+        $html .= "</div>";
+        $html .= "</div>";        
+
+        return $html;
+    }
+
     public function submit($class,$content,$name){
         
         $html = "<div class='row'>";
@@ -41,12 +53,12 @@ class ClassForm{
         return $html;
     }
 
-    public function textarea($name,$value, $options = []){
+    public function textarea($name,$value){
+        $html= "<textarea name='".$name."' id='".$name."'> ";
+        $html .= $value;
+        $html .= "</textarea>";
 
-        $constructor = '';
-        foreach ($options as $k => $v){
-            $constructor .= " $k = '$v' ";
-        }
+        return $html;
     }
 
     public function checkbox($name, $value){

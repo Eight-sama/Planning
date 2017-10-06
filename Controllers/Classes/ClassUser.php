@@ -4,7 +4,11 @@ class ClassUser{
     public function printinf($info){
         // Exemple : Afficher l'id de l'utilisateur: userDispInfo('id')
         if(!empty($_SESSION) && isset($_SESSION)){
-            echo $_SESSION[$info];
+            $statement = $bdd->query("SELECT * FROM users WHERE id_u = ".$_SESSION['id']);
+            while($action = $statement->fetch())
+            {
+                echo $action[$info];
+            }
         }
     }
     public function getName($get){
@@ -12,7 +16,7 @@ class ClassUser{
         $statement = $bdd->query("SELECT * FROM users WHERE id_u = ".$get);
         while($action = $statement->fetch())
         {
-            echo $action['prenom'];
+            return $action['prenom'];
         }
     }
     public function getSurname($get){
@@ -20,7 +24,7 @@ class ClassUser{
         $statement = $bdd->query("SELECT * FROM users WHERE id_u = ".$get);
         while($action = $statement->fetch())
         {
-            echo $action['nom'];
+            return $action['nom'];
         }
     }
     public function getEmail($get){
@@ -28,25 +32,38 @@ class ClassUser{
         $statement = $bdd->query("SELECT * FROM users WHERE id_u = ".$get);
         while($action = $statement->fetch())
         {
-            echo $action['email'];
+            return $action['email'];
         }
     }
     public function getInf($info){
+        global $bdd;
         if(!empty($_SESSION) && isset($_SESSION)){
-            return $_SESSION[$info];
+            $statement = $bdd->query("SELECT * FROM users WHERE id_u = ".$_SESSION['id']);
+            while($action = $statement->fetch())
+            {
+                return $action[$info];
+            }
         }
     }
-    public function getAppreGlobale($id_u){
+     public function getInfOther($info, $get){
         global $bdd;
         $statement = $bdd->query("SELECT * FROM users WHERE id_u = ".$get);
         while($action = $statement->fetch())
         {
-            echo $action['email'];
+            return $action[$info];
         }
     }
-    public function updateValues($id_u, $champ, $new_value, $bdd, $table){
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $statement = $bdd->prepare("UPDATE ? SET ? = ? WHERE id_u = ?");
-        $statement->execute([$table,$champ,$new_value,$id_u]);
+    public function getAppreGlobale($id_u){
+        global $bdd;
+        $statement = $bdd->query("SELECT * FROM apprecier WHERE id_u = ".$id_u);
+        while($action = $statement->fetch())
+        {
+            return $action['appreciationglobal'];
+        }
+    }
+    public function updateAppreGlobale($id_u,$content){
+        global $bdd;
+        $statement = $bdd->prepare("UPDATE appprecier SET appreciationglobal = ? WHERE id_u = ".$id_u);
+        $statement->execute([$content]);
     }
 }

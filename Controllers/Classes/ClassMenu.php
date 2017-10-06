@@ -72,7 +72,7 @@
             $html .= "<li><a href='index.php?page=AttribuerMatiere'>Attribuer matière à professeur</a></li>";
             $html .= "<li><a href='index.php?page=VerrouillerSemestre'>Verrouiller un semestre</a></li>";
             $html .= "<li><a href='index.php?page=AjouterEleve'>Ajouter un élève à une classe</a></li>";
-		$html .= "<li><a href='index.php?page=ModifierProfilUtilisateur'>Modifier le profil d'un utilisateur</a></li>";
+		$html .= "<li><a href='index.php?page=ModifierUtilisateur'>Modifier le profil d'un utilisateur</a></li>";
 		$html .= "<li><a href='index.php?page=ModifierAppreciation'>Ajouter / Modifier une appréciation</a></li>";
             $html .= "<li><div class='divider'></div></li>";
             $html .= "<li><a href='index.php?page=Deconnexion'>Se déconnecter</a></li>";
