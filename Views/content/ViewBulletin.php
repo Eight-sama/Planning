@@ -1,9 +1,8 @@
-
 <div class="row">
-    <div class="col m12">
-        <div class="card-panel col m12">
-            <h3 class="center">Bulletin de Jean-Gauthier</h3>
-            <div class="input-field col m12">
+    <div class="col s12">
+        <div class="card-panel col s12">
+            <h3 class="center">Bulletin de <?= $userInit->getName($_GET['id_u']); ?> <?= $userInit->getSurname($_GET['id_u']); ?></h3>
+            <div class="input-field col s12">
                 <select>                    
                     <option value="default" default>Choisissez un semestre</option>
                     <option value="1">Semestre 1</option>
@@ -14,7 +13,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col m12">
+    <div class="col s12">
         <div class="white black-text text-darken-2 lighten-2">
             <div class="card col s12">
                 <div class="col s12">
@@ -86,6 +85,19 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12">
+        <div class="card-panel col s12">
+            <h5 class="center">Appréciation globale</h5>
+            <div class="input-field col s12">
+                <p>
+                    
+                </p>
             </div>
         </div>
     </div>

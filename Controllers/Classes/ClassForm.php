@@ -14,11 +14,11 @@ class ClassForm{
         return $html;
     }
 
-    public function submit($class,$content){
+    public function submit($class,$content,$name){
         
         $html = "<div class='row'>";
         $html .= "<div class='input-field col s12 center'>";
-        $html .= "<button class='".$class."' type='submit' name='submit' id='submit'>";
+        $html .= "<button class='".$class."' type='".$name."' name='".$name."' id='".$name."'>";
         $html .= $content;
         $html .= "</button>";
         $html .= "</div>";
@@ -27,15 +27,16 @@ class ClassForm{
         return $html;
     }
 
-    public function select($name, $value){
+    public function select($name, $values){
 
         $html="<select class='' name='".$name."' id='".$name."'> ";
-
+        $i=1;
         foreach ($values as $value){
-            $html .= "<option value=''></option>";
+            $html .= "<option value='".$i."'>".$value."</option>";
+            $i++;
         }
 
-        $html .= "</select";
+        $html .= "</select>";
 
         return $html;
     }
@@ -52,7 +53,7 @@ class ClassForm{
 
         $html = "<p>";
         $html .= " <input type='".$name."' id='".$name."' />";
-        $html .= " <label for='".$name."'>Red</label>";
+        $html .= " <label for='".$name."'>".$value."</label>";
         $html .= "</p>";
 
         return $html;

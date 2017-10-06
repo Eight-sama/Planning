@@ -1,17 +1,10 @@
 <?php
+	require "Models/ModelConfigBddSession.php";
 	require "Models/ModelClassesInit.php";
 	require "Models/ModelInit.php";
-	require "Models/ModelConfigBddSession.php";
+	
 	if(isset($_SESSION['connecte']) && ($_SESSION['connecte'] == true)){
-		if(($_SESSION['lvl'] == 1)){
-			header("Location:index.php?page=EspaceEleve");
-		}
-		if(($_SESSION['lvl'] == 2)){
-			header("Location:index.php?page=EspaceEnseignant");
-		}
-		if(($_SESSION['lvl'] == 3)){
-			header("Location:index.php?page=EspaceAdmin");
-		}
+		header("Location:index.php?page=Espace");
 	}
 	else{
 		ob_start();

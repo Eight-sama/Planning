@@ -1,7 +1,7 @@
 <?php
 	class ClassMenu{
 		private function studentList(){
-			$html = "<li>";
+		$html = "<li>";
             $html .= "<div class='user-view'>";
             $html .= "<div class='background'>";
             $html .= "<img src='http://lorempixel.com/400/200/'>";
@@ -17,7 +17,7 @@
             $html .= "</span></a>";
             $html .= "</div>";
             $html .= "</li>";
-		$html .= "<li><a href='index.php?page=BulletinEleve'>Bulletin</a></li>";
+		$html .= "<li><a href='index.php?page=Bulletin'>Bulletin</a></li>";
 		$html .= "<li><a href='#'>Appréciations</a></li>";
             $html .= "<li><div class='divider'></div></li>";
             $html .= "<li><a href='index.php?page=Deconnexion'>Se déconnecter</a></li>";
@@ -40,10 +40,10 @@
             $html .= "</span></a>";
             $html .= "</div>";
             $html .= "</li>";
-		$html .= "<li><a href='index.php?page=BulletinEnseignant'>Voir un bulletin</a></li>";
-		$html .= "<li><a href='index.php?page=BulletinEnseignant'>Ajouter une note</a></li>";
-		$html .= "<li><a href='index.php?page=BulletinEnseignant'>Modifier une note</a></li>";
-		$html .= "<li><a href='index.php?page=BulletinEnseignant'>Ajouter / Modifier une appréciation</a></li>";
+		$html .= "<li><a href='index.php?page=Bulletin'>Voir un bulletin</a></li>";
+		$html .= "<li><a href='index.php?page=Bulletin'>Ajouter une note</a></li>";
+		$html .= "<li><a href='index.php?page=Bulletin'>Modifier une note</a></li>";
+		$html .= "<li><a href='index.php?page=Bulletin'>Ajouter / Modifier une appréciation</a></li>";
             $html .= "<li><div class='divider'></div></li>";
             $html .= "<li><a href='index.php?page=Deconnexion'>Se déconnecter</a></li>";
 			return $html;
@@ -65,11 +65,15 @@
             $html .= "</span></a>";
             $html .= "</div>";
             $html .= "</li>";
-		$html .= "<li><a href='index.php?page=BulletinAdmin'>Voir un bulletin</a></li>";
-		$html .= "<li><a href='index.php?page=BulletinAdmin'>Ajouter une note</a></li>";
-		$html .= "<li><a href='index.php?page=BulletinAdmin'>Modifier une note</a></li>";
-		$html .= "<li><a href='index.php?page=ModifierProfilUtilisateurAdmin'>Modifier le profil d'un utilisateur</a></li>";
-		$html .= "<li><a href='index.php?page=BulletinAdmin'>Ajouter / Modifier une appréciation</a></li>";
+            $html .= "<li><a href='index.php?page=Espace'>Mon profil</a></li>";
+		$html .= "<li><a href='index.php?page=Bulletin'>Voir un bulletin</a></li>";
+		$html .= "<li><a href='index.php?page=Note'>Ajouter une note</a></li>";
+		$html .= "<li><a href='index.php?page=Bulletin'>Modifier une note</a></li>";
+            $html .= "<li><a href='index.php?page=AttribuerMatiere'>Attribuer matière à professeur</a></li>";
+            $html .= "<li><a href='index.php?page=VerrouillerSemestre'>Verrouiller un semestre</a></li>";
+            $html .= "<li><a href='index.php?page=AjouterEleve'>Ajouter un élève à une classe</a></li>";
+		$html .= "<li><a href='index.php?page=ModifierProfilUtilisateur'>Modifier le profil d'un utilisateur</a></li>";
+		$html .= "<li><a href='index.php?page=ModifierAppreciation'>Ajouter / Modifier une appréciation</a></li>";
             $html .= "<li><div class='divider'></div></li>";
             $html .= "<li><a href='index.php?page=Deconnexion'>Se déconnecter</a></li>";
 			return $html;
